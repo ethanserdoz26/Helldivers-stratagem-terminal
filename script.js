@@ -27,14 +27,15 @@ const stratagems = {
 
 let input = [];
 
-// Load the button click sound
-const clickSound = new Audio("stratagem-click.mp3");
+// Play a new copy of the click for every button press
+function playClick() {
+    const sound = new Audio("stratagem-click.mp3");
+    sound.play();
+}
 
 function enterArrow(direction) {
 
-    // Play the click sound
-    clickSound.currentTime = 0;
-    clickSound.play();
+    playClick();
 
     input.push(direction);
 
