@@ -22,47 +22,112 @@ body {
 
 .arrows {
     display: grid;
-    grid-template-columns: 100px 100px 100px;
-    grid-template-rows: 100px 100px;
-    gap: 10px;
+    grid-template-columns: 110px 110px 110px;
+    grid-template-rows: 110px 110px;
+    gap: 15px;
 }
 
 button {
+    position: relative;
     background: none;
     border: none;
-    color: white;
-    font-size: 90px;
-    font-weight: bold;
-    width: 100px;
-    height: 100px;
+    width: 110px;
+    height: 110px;
     padding: 0;
-    line-height: 1;
     cursor: pointer;
-    font-family: Arial, sans-serif;
 }
 
 button:active {
     transform: scale(0.85);
 }
 
-button:nth-child(1) {
+/* The arrow shaft */
+button::before {
+    content: "";
+    position: absolute;
+    background: white;
+}
+
+/* The arrow head */
+button::after {
+    content: "";
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    background: white;
+    transform: rotate(45deg);
+}
+
+/* UP */
+button[data-direction="up"] {
     grid-column: 2;
     grid-row: 1;
 }
 
-button:nth-child(2) {
+button[data-direction="up"]::before {
+    width: 28px;
+    height: 65px;
+    left: 41px;
+    top: 32px;
+}
+
+button[data-direction="up"]::after {
+    left: 34px;
+    top: 17px;
+}
+
+/* LEFT */
+button[data-direction="left"] {
     grid-column: 1;
     grid-row: 2;
 }
 
-button:nth-child(3) {
+button[data-direction="left"]::before {
+    width: 65px;
+    height: 28px;
+    left: 32px;
+    top: 41px;
+}
+
+button[data-direction="left"]::after {
+    left: 17px;
+    top: 34px;
+}
+
+/* DOWN */
+button[data-direction="down"] {
     grid-column: 2;
     grid-row: 2;
 }
 
-button:nth-child(4) {
+button[data-direction="down"]::before {
+    width: 28px;
+    height: 65px;
+    left: 41px;
+    top: 13px;
+}
+
+button[data-direction="down"]::after {
+    left: 34px;
+    top: 51px;
+}
+
+/* RIGHT */
+button[data-direction="right"] {
     grid-column: 3;
     grid-row: 2;
+}
+
+button[data-direction="right"]::before {
+    width: 65px;
+    height: 28px;
+    left: 13px;
+    top: 41px;
+}
+
+button[data-direction="right"]::after {
+    left: 51px;
+    top: 34px;
 }
 
 .received {
