@@ -22,40 +22,22 @@ body {
 
 .arrows {
     display: grid;
-    grid-template-columns: 110px 110px 110px;
-    grid-template-rows: 110px 110px;
-    gap: 15px;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px;
+    gap: 10px;
+    width: 320px;
+    height: 210px;
 }
 
 button {
     position: relative;
     background: none;
     border: none;
-    width: 110px;
-    height: 110px;
+    width: 100px;
+    height: 100px;
     padding: 0;
+    margin: 0;
     cursor: pointer;
-}
-
-button:active {
-    transform: scale(0.85);
-}
-
-/* The arrow shaft */
-button::before {
-    content: "";
-    position: absolute;
-    background: white;
-}
-
-/* The arrow head */
-button::after {
-    content: "";
-    position: absolute;
-    width: 42px;
-    height: 42px;
-    background: white;
-    transform: rotate(45deg);
 }
 
 /* UP */
@@ -64,34 +46,10 @@ button[data-direction="up"] {
     grid-row: 1;
 }
 
-button[data-direction="up"]::before {
-    width: 28px;
-    height: 65px;
-    left: 41px;
-    top: 32px;
-}
-
-button[data-direction="up"]::after {
-    left: 34px;
-    top: 17px;
-}
-
 /* LEFT */
 button[data-direction="left"] {
     grid-column: 1;
     grid-row: 2;
-}
-
-button[data-direction="left"]::before {
-    width: 65px;
-    height: 28px;
-    left: 32px;
-    top: 41px;
-}
-
-button[data-direction="left"]::after {
-    left: 17px;
-    top: 34px;
 }
 
 /* DOWN */
@@ -100,34 +58,72 @@ button[data-direction="down"] {
     grid-row: 2;
 }
 
-button[data-direction="down"]::before {
-    width: 28px;
-    height: 65px;
-    left: 41px;
-    top: 13px;
-}
-
-button[data-direction="down"]::after {
-    left: 34px;
-    top: 51px;
-}
-
 /* RIGHT */
 button[data-direction="right"] {
     grid-column: 3;
     grid-row: 2;
 }
 
+/* Arrow shaft */
+button::before {
+    content: "";
+    position: absolute;
+    background: white;
+    width: 28px;
+    height: 62px;
+    left: 36px;
+    top: 20px;
+}
+
+/* Arrow head */
+button::after {
+    content: "";
+    position: absolute;
+    background: white;
+    width: 42px;
+    height: 42px;
+    transform: rotate(45deg);
+    left: 29px;
+    top: 7px;
+}
+
+/* Rotate the arrow shapes */
+button[data-direction="left"]::before,
 button[data-direction="right"]::before {
-    width: 65px;
+    width: 62px;
     height: 28px;
-    left: 13px;
-    top: 41px;
+    left: 20px;
+    top: 36px;
+}
+
+button[data-direction="left"]::after {
+    left: 7px;
+    top: 29px;
 }
 
 button[data-direction="right"]::after {
     left: 51px;
-    top: 34px;
+    top: 29px;
+}
+
+button[data-direction="down"]::before {
+    top: 18px;
+}
+
+button[data-direction="down"]::after {
+    top: 51px;
+}
+
+button[data-direction="left"]::before {
+    left: 18px;
+}
+
+button[data-direction="right"]::before {
+    left: 20px;
+}
+
+button:active {
+    transform: scale(0.85);
 }
 
 .received {
