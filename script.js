@@ -27,7 +27,7 @@ const stratagems = {
 
 let input = [];
 
-// Play a new copy of the click for every button press
+// Play a new copy of the click sound for every button press
 function playClick() {
     const sound = new Audio("stratagem-click.mp3");
     sound.play();
@@ -58,10 +58,21 @@ function enterArrow(direction) {
 function showRequest(stratagem) {
     document.getElementById("terminal").innerHTML = `
         <div class="result">
-            <div class="received">REQUEST RECEIVED</div>
-            <img class="stratagem-icon"
-                 src="${stratagem.icon}"
-                 alt="${stratagem.name}">
+
+            <div class="received">
+                REQUEST RECEIVED
+            </div>
+
+            <img
+                class="stratagem-icon"
+                src="${stratagem.icon}"
+                alt="${stratagem.name}"
+            >
+
+            <div class="stratagem-name">
+                ${stratagem.name}
+            </div>
+
         </div>
     `;
 
@@ -76,10 +87,15 @@ function createButtons() {
 
     terminal.innerHTML = `
         <div class="arrows">
-            <button type="button" data-direction="up">⬆</button>
-            <button type="button" data-direction="left">⬅</button>
-            <button type="button" data-direction="down">⬇</button>
-            <button type="button" data-direction="right">➡</button>
+
+            <button type="button" data-direction="up"></button>
+
+            <button type="button" data-direction="left"></button>
+
+            <button type="button" data-direction="down"></button>
+
+            <button type="button" data-direction="right"></button>
+
         </div>
     `;
 
@@ -92,6 +108,7 @@ function createButtons() {
 
             const direction = button.dataset.direction;
             enterArrow(direction);
+
         }, { passive: false });
 
         button.addEventListener("click", function(event) {
