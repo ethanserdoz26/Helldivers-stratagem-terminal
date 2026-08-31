@@ -27,7 +27,15 @@ const stratagems = {
 
 let input = [];
 
+// Load the button click sound
+const clickSound = new Audio("stratagem-click.mp3");
+
 function enterArrow(direction) {
+
+    // Play the click sound
+    clickSound.currentTime = 0;
+    clickSound.play();
+
     input.push(direction);
 
     const code = input.join(",");
