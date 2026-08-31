@@ -7,6 +7,21 @@ const stratagems = {
     "up,right,right": {
         name: "EAGLE STRAFING RUN",
         icon: "eagle-strafing-run.png"
+    },
+
+    "down,up,left,down,up,right,down,up": {
+        name: "HELLBOMB",
+        icon: "hellbomb.png"
+    },
+
+    "right,down,up,right,down": {
+        name: "ORBITAL LASER",
+        icon: "orbital-laser.png"
+    },
+
+    "up,down,right,left,up": {
+        name: "REINFORCE",
+        icon: "reinforce.png"
     }
 };
 
