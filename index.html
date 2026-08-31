@@ -1,22 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width,
+                   initial-scale=1,
+                   maximum-scale=1,
+                   minimum-scale=1,
+                   user-scalable=no,
+                   viewport-fit=cover">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
     <title>Stratagem Terminal</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div id="terminal">
+    <main id="terminal">
+
         <div class="arrows">
-            <button onclick="enterArrow('up')">↑</button>
-            <button onclick="enterArrow('left')">←</button>
-            <button onclick="enterArrow('down')">↓</button>
-            <button onclick="enterArrow('right')">→</button>
+
+            <button type="button"
+                    aria-label="Up"
+                    onclick="enterArrow('up')">⬆</button>
+
+            <button type="button"
+                    aria-label="Left"
+                    onclick="enterArrow('left')">⬅</button>
+
+            <button type="button"
+                    aria-label="Down"
+                    onclick="enterArrow('down')">⬇</button>
+
+            <button type="button"
+                    aria-label="Right"
+                    onclick="enterArrow('right')">➡</button>
+
         </div>
-    </div>
+
+    </main>
 
     <script src="script.js"></script>
+
 </body>
 </html>
