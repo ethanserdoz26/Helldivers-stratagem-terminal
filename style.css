@@ -20,111 +20,177 @@ body {
     justify-content: center;
 }
 
+/* Arrow layout */
 .arrows {
-    display: grid;
-    grid-template-columns: 100px 100px 100px;
-    grid-template-rows: 100px 100px;
-    gap: 10px;
-    width: 320px;
-    height: 210px;
+    position: relative;
+    width: 360px;
+    height: 300px;
 }
 
+/* Invisible buttons */
 button {
-    position: relative;
-    background: none;
+    position: absolute;
+    background: transparent;
     border: none;
-    width: 100px;
-    height: 100px;
     padding: 0;
     margin: 0;
     cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
 }
 
-/* UP */
+/* Make sure clicking the button doesn't create a visible box */
+button:focus,
+button:active {
+    outline: none;
+    background: transparent;
+}
+
+/* =========================
+   UP ARROW
+   ========================= */
+
 button[data-direction="up"] {
-    grid-column: 2;
-    grid-row: 1;
+    width: 100px;
+    height: 125px;
+    left: 130px;
+    top: 0;
 }
 
-/* LEFT */
-button[data-direction="left"] {
-    grid-column: 1;
-    grid-row: 2;
-}
-
-/* DOWN */
-button[data-direction="down"] {
-    grid-column: 2;
-    grid-row: 2;
-}
-
-/* RIGHT */
-button[data-direction="right"] {
-    grid-column: 3;
-    grid-row: 2;
-}
-
-/* Arrow shaft */
-button::before {
+button[data-direction="up"]::before {
     content: "";
     position: absolute;
-    background: white;
-    width: 28px;
-    height: 62px;
-    left: 36px;
-    top: 20px;
-}
-
-/* Arrow head */
-button::after {
-    content: "";
-    position: absolute;
-    background: white;
     width: 42px;
-    height: 42px;
-    transform: rotate(45deg);
+    height: 85px;
+    background: white;
     left: 29px;
-    top: 7px;
+    top: 40px;
 }
 
-/* Rotate the arrow shapes */
-button[data-direction="left"]::before,
-button[data-direction="right"]::before {
-    width: 62px;
-    height: 28px;
-    left: 20px;
-    top: 36px;
+button[data-direction="up"]::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 60px solid white;
+    left: 0;
+    top: 0;
+}
+
+
+/* =========================
+   LEFT ARROW
+   ========================= */
+
+button[data-direction="left"] {
+    width: 125px;
+    height: 100px;
+    left: 0;
+    top: 150px;
+}
+
+button[data-direction="left"]::before {
+    content: "";
+    position: absolute;
+    width: 85px;
+    height: 42px;
+    background: white;
+    left: 40px;
+    top: 29px;
 }
 
 button[data-direction="left"]::after {
-    left: 7px;
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    border-right: 60px solid white;
+    left: 0;
+    top: 0;
+}
+
+
+/* =========================
+   RIGHT ARROW
+   ========================= */
+
+button[data-direction="right"] {
+    width: 125px;
+    height: 100px;
+    right: 0;
+    top: 150px;
+}
+
+button[data-direction="right"]::before {
+    content: "";
+    position: absolute;
+    width: 85px;
+    height: 42px;
+    background: white;
+    left: 0;
     top: 29px;
 }
 
 button[data-direction="right"]::after {
-    left: 51px;
-    top: 29px;
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    border-left: 60px solid white;
+    right: 0;
+    top: 0;
+}
+
+
+/* =========================
+   DOWN ARROW
+   ========================= */
+
+button[data-direction="down"] {
+    width: 100px;
+    height: 125px;
+    left: 130px;
+    top: 150px;
 }
 
 button[data-direction="down"]::before {
-    top: 18px;
+    content: "";
+    position: absolute;
+    width: 42px;
+    height: 85px;
+    background: white;
+    left: 29px;
+    top: 0;
 }
 
 button[data-direction="down"]::after {
-    top: 51px;
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 60px solid white;
+    left: 0;
+    bottom: 0;
 }
 
-button[data-direction="left"]::before {
-    left: 18px;
-}
 
-button[data-direction="right"]::before {
-    left: 20px;
-}
-
+/* Button press effect */
 button:active {
-    transform: scale(0.85);
+    transform: scale(0.92);
 }
+
+
+/* =========================
+   REQUEST RECEIVED
+   ========================= */
 
 .received {
     color: white;
