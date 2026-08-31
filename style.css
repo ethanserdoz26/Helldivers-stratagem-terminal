@@ -20,7 +20,10 @@ body {
     justify-content: center;
 }
 
-/* Overall arrow area */
+/* =========================
+   ARROW LAYOUT
+   ========================= */
+
 .arrows {
     position: relative;
     width: 420px;
@@ -28,6 +31,7 @@ body {
 }
 
 /* Invisible clickable buttons */
+
 button {
     position: absolute;
     background: transparent;
@@ -46,8 +50,9 @@ button:active {
     outline: none;
 }
 
+
 /* =========================
-   UP
+   UP ARROW
    ========================= */
 
 button[data-direction="up"] {
@@ -81,7 +86,7 @@ button[data-direction="up"]::after {
 
 
 /* =========================
-   LEFT
+   LEFT ARROW
    ========================= */
 
 button[data-direction="left"] {
@@ -115,7 +120,7 @@ button[data-direction="left"]::after {
 
 
 /* =========================
-   RIGHT
+   RIGHT ARROW
    ========================= */
 
 button[data-direction="right"] {
@@ -149,7 +154,7 @@ button[data-direction="right"]::after {
 
 
 /* =========================
-   DOWN
+   DOWN ARROW
    ========================= */
 
 button[data-direction="down"] {
@@ -182,21 +187,33 @@ button[data-direction="down"]::after {
 }
 
 
-/* Press animation */
+/* =========================
+   BUTTON PRESS
+   ========================= */
+
 button:active {
     transform: scale(0.92);
 }
 
 
 /* =========================
-   REQUEST RECEIVED
+   REQUEST RECEIVED SCREEN
    ========================= */
+
+.result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
 
 .received {
     color: white;
-    font-size: 28px;
-    text-align: center;
-    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
 }
 
 .stratagem-icon {
@@ -204,5 +221,12 @@ button:active {
     height: 220px;
     object-fit: contain;
     display: block;
-    margin: auto;
+}
+
+.stratagem-name {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-top: 20px;
 }
