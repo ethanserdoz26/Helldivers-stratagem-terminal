@@ -2,6 +2,11 @@ const stratagems = {
     "up,right,down,down,down": {
         name: "500KG BOMB",
         icon: "500kg-bomb.png"
+    },
+
+    "up,right,right": {
+        name: "EAGLE STRAFING RUN",
+        icon: "eagle-strafing-run.png"
     }
 };
 
@@ -38,7 +43,6 @@ function showRequest(stratagem) {
 
     setTimeout(() => {
         input = [];
-
         createButtons();
     }, 3000);
 }
